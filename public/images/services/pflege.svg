@@ -1,0 +1,7 @@
+<svg width="900" height="500" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#E2D1B2"/>
+  <rect x="30" y="30" width="840" height="440" rx="22" fill="#D3BE98" stroke="#9F8E6B"/>
+  <path d="M70 360C180 260 300 410 430 320C560 230 660 320 820 210" stroke="#516231" stroke-width="18" stroke-linecap="round"/>
+  <text x="70" y="160" fill="#232722" font-size="42" font-family="Arial, sans-serif" font-weight="700">Service Placeholder</text>
+</svg>
+

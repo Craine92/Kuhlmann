@@ -1,0 +1,9 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#DCC7A3"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="#D3BE98" stroke="#9F8E6B"/>
+  <circle cx="980" cy="170" r="110" fill="#C8D8A7"/>
+  <path d="M120 450C240 350 380 520 500 420C620 320 760 430 920 310" stroke="#516231" stroke-width="24" stroke-linecap="round"/>
+  <text x="120" y="230" fill="#232722" font-size="58" font-family="Arial, sans-serif" font-weight="700">Galabau Kuhlmann</text>
+  <text x="120" y="290" fill="#4E534E" font-size="34" font-family="Arial, sans-serif">Garten- und Landschaftsbau in der Region Hannover</text>
+</svg>
+

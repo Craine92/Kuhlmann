@@ -1,0 +1,7 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" fill="#DDC9A6"/>
+  <rect x="40" y="40" width="820" height="520" rx="24" fill="#D3BE98" stroke="#9F8E6B"/>
+  <path d="M90 420C190 300 300 470 410 370C530 260 650 330 790 240" stroke="#2F5A3A" stroke-width="20" stroke-linecap="round"/>
+  <text x="90" y="190" fill="#232722" font-size="44" font-family="Arial, sans-serif" font-weight="700">Projekt Placeholder</text>
+</svg>
+

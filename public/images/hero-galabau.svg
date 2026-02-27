@@ -1,0 +1,9 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#D3BE98"/>
+  <rect x="70" y="70" width="1060" height="760" rx="30" fill="#D3BE98" stroke="#9F8E6B"/>
+  <rect x="120" y="580" width="380" height="180" rx="20" fill="#F0FDF4"/>
+  <path d="M100 520C220 390 380 620 520 510C650 410 770 500 980 370" stroke="#516231" stroke-width="26" stroke-linecap="round"/>
+  <text x="120" y="200" fill="#232722" font-size="62" font-family="Arial, sans-serif" font-weight="700">Premium Galabau</text>
+  <text x="120" y="264" fill="#4E534E" font-size="32" font-family="Arial, sans-serif">Qualität. Zuverlässig. Sauber.</text>
+</svg>
+
