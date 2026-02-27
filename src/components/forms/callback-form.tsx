@@ -1,15 +1,11 @@
 "use client";
 
-import { useActionState, useMemo, useState } from "react";
-import { submitCallbackForm, type FormState } from "@/src/actions/contact";
-import { SubmitButton } from "@/src/components/forms/submit-button";
+import { useMemo, useState } from "react";
 import { company } from "@/src/content/company";
 
-const initialState: FormState = { ok: false, message: "" };
-
 export function CallbackForm() {
-  const [state, formAction] = useActionState(submitCallbackForm, initialState);
   const [clientError, setClientError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const fallbackMailto = useMemo(
     () =>
@@ -21,18 +17,29 @@ export function CallbackForm() {
 
   return (
     <form
-      action={formAction}
       className="space-y-4"
       onSubmit={(event) => {
+        event.preventDefault();
         const form = event.currentTarget;
         const privacy = form.querySelector<HTMLInputElement>('input[name="privacy"]');
         if (!form.checkValidity() || !privacy?.checked) {
-          event.preventDefault();
           setClientError("Bitte alle Pflichtfelder ausfüllen und Datenschutzhinweis bestätigen.");
           form.reportValidity();
           return;
         }
+
+        const data = new FormData(form);
+        const name = String(data.get("name") ?? "").trim();
+        const phone = String(data.get("phone") ?? "").trim();
+        const preferredTime = String(data.get("preferredTime") ?? "").trim();
+        const message = String(data.get("message") ?? "").trim();
+        const mailto = `mailto:${company.email}?subject=${encodeURIComponent("Rückruf anfordern")}&body=${encodeURIComponent(
+          `${name}\n${phone}\n${preferredTime}\n\n${message}`,
+        )}`;
+
+        window.location.href = mailto;
         setClientError("");
+        setSuccess("E-Mail-Programm wurde geöffnet. Falls nicht, nutzen Sie den Mailto-Link unten.");
       }}
     >
       <div className="grid gap-4 sm:grid-cols-2">
@@ -83,14 +90,17 @@ export function CallbackForm() {
         Ich habe den Datenschutzhinweis zur Verarbeitung meiner Anfrage gelesen und akzeptiert.*
       </label>
       {clientError ? <p className="text-sm font-medium text-rose-700">{clientError}</p> : null}
-      {state.message ? <p className={`text-sm font-medium ${state.ok ? "text-brand-oliveDark" : "text-rose-700"}`}>{state.message}</p> : null}
-      {!state.ok && state.message ? (
-        <a href={state.mailto || fallbackMailto} className="inline-block text-sm font-semibold text-brand-olive underline">
-          Alternativ per E-Mail senden
-        </a>
-      ) : null}
+      {success ? <p className="text-sm font-medium text-brand-oliveDark">{success}</p> : null}
+      <a href={fallbackMailto} className="inline-block text-sm font-semibold text-brand-olive underline">
+        Alternativ per E-Mail senden
+      </a>
       <p className="text-xs text-brand-charcoal/70">Hinweis: Diese Seite nutzt keine Tracking-Cookies.</p>
-      <SubmitButton label="Rückruf anfordern" />
+      <button
+        type="submit"
+        className="inline-flex h-11 items-center justify-center rounded-full bg-brand-olive px-6 text-sm font-semibold text-brand-sand transition-colors hover:bg-brand-oliveDark"
+      >
+        Rückruf anfordern
+      </button>
     </form>
   );
 }

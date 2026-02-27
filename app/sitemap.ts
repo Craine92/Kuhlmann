@@ -3,6 +3,8 @@ import { company } from "@/src/content/company";
 import { projects } from "@/src/content/projects";
 import { services } from "@/src/content/services";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = `https://${company.domain}`;
   const staticPages = ["", "/leistungen", "/referenzen", "/ueber-uns", "/kontakt", "/impressum", "/datenschutz"];
